@@ -495,6 +495,16 @@ section { padding: 100px 2rem; position: relative; }
   overflow: hidden;
 }
 
+.about-photo {
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--border-blue);
+}
+
 .about-photo-placeholder {
   width: 100%;
   padding-bottom: 120%;
@@ -1663,17 +1673,17 @@ footer {
   <div class="hero-content">
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
-      <span>Ingénierie Industrielle &amp; Conception 3D</span>
+      <span id="heroBadgeText">Ingénierie Industrielle &amp; Conception 3D</span>
     </div>
 
-    <h1>
+    <h1 id="heroTitle">
       <span class="line-accent">Transformer</span>
       <span>les idées en</span>
       <span class="line-blue">Solutions</span>
       <span class="line-accent">Industrielles</span>
     </h1>
 
-    <p class="hero-sub">
+    <p class="hero-sub" id="heroSub">
       Services de conception 3D, industrialisation, prototypage et ingénierie technique pour les entreprises innovantes.
     </p>
 
@@ -1718,7 +1728,7 @@ footer {
     <div class="about-grid">
       <div class="about-visual reveal">
         <div class="about-photo-frame">
-          <div class="about-photo-placeholder"></div>
+          <img class="about-photo" src="pic.webp" alt="Portrait de Youness EL FORSA">
           <div class="about-photo-label">
             <strong>Youness EL FORSA</strong>
             <span>Ingénieur Industriel</span>
@@ -1810,10 +1820,10 @@ footer {
   <div class="section-inner">
     <div class="services-header">
       <div>
-        <div class="section-label">Services</div>
-        <h2 class="section-title reveal">Notre<br><span>Expertise</span></h2>
+        <div class="section-label" id="services_label">Services</div>
+        <h2 class="section-title reveal" id="services_title">Notre<br><span>Expertise</span></h2>
       </div>
-      <p class="section-desc reveal">Solutions d'ingénierie complètes du concept initial à la production en série, adaptées à chaque projet industriel.</p>
+      <p class="section-desc reveal" id="services_desc">Solutions d'ingénierie complètes du concept initial à la production en série, adaptées à chaque projet industriel.</p>
     </div>
 
     <div class="services-grid reveal">
@@ -2119,8 +2129,8 @@ footer {
   <div class="section-inner">
     <div class="services-header">
       <div>
-        <div class="section-label">Compétences</div>
-        <h2 class="section-title reveal">Outils &amp;<br><span>Expertise</span></h2>
+        <div class="section-label" id="skills_label">Compétences</div>
+        <h2 class="section-title reveal" id="skills_title">Outils &amp;<br><span>Expertise</span></h2>
       </div>
       <p class="section-desc reveal">Maîtrise des logiciels industriels leaders du marché et des méthodologies d'ingénierie de pointe.</p>
     </div>
@@ -2786,28 +2796,143 @@ const translations = {
     heroBadge: 'Ingénierie Industrielle & Conception 3D',
     heroTitle1: 'Transformer', heroTitle2: 'les idées en', heroTitle3: 'Solutions', heroTitle4: 'Industrielles',
     heroSub: 'Services de conception 3D, industrialisation, prototypage et ingénierie technique pour les entreprises innovantes.',
-    btn1: 'Voir les Services', btn2: 'Contactez-nous', cta: 'Devis Gratuit'
+    btn1: 'Voir les Services', btn2: 'Contactez-nous', cta: 'Devis Gratuit',
+    // sections
+    about_label: 'À Propos', about_title: 'Youness<br><span>EL FORSA</span>', about_desc: "Ingénieur industriel spécialisé dans la conception de produits, l'industrialisation et l'amélioration continue.",
+    services_label: 'Services', services_title: 'Notre<br><span>Expertise</span>', services_desc: 'Solutions d\'ingénierie complètes du concept initial à la production en série.',
+    process_label: 'Méthodologie', process_title: 'Notre <span>Workflow</span>', process_desc: 'Un processus éprouvé en 8 étapes pour transformer votre idée en solution industrielle opérationnelle.',
+    portfolio_label: 'Portfolio', portfolio_title: 'Projets<br><span>Réalisés</span>', portfolio_desc: "Une sélection de projets illustrant l'étendue de notre expertise.",
+    skills_label: 'Compétences', skills_title: 'Outils &amp;<br><span>Expertise</span>', skills_desc: 'Maîtrise des logiciels industriels leaders du marché et des méthodologies d\'ingénierie.',
+    why_label: 'Pourquoi Nous Choisir', why_title: "L'Avantage<br><span>EL FORSA</span>", why_desc: 'Approche technique, optimisation coûts et documentation industrielle complète.',
+    testimonials_label: 'Témoignages', testimonials_title: 'Ce que disent<br><span>nos clients</span>',
+    contact_label: 'Contact', contact_title: 'Démarrons<br><span>votre projet</span>', contact_desc: 'Décrivez votre projet et nous vous contacterons dans les 24h.',
+    // form
+    form_labels: ['Nom complet *','Entreprise','Email *','Type de projet','Description du projet *'],
+    placeholders: ['Votre nom','Votre société','votre@email.com','Sélectionner...','Décrivez votre projet, vos besoins et vos contraintes...'],
+    project_types: ['Sélectionner...','Conception 3D','Industrialisation','Prototypage','Documentation Technique','Consulting Ingénierie','Amélioration Continue','Autre'],
+    submitBtn: 'Envoyer ma demande', formSuccess: '✓ Merci ! Votre message a été envoyé. Nous vous répondrons dans les 24h.', formError: 'Erreur d\'envoi, réessayez plus tard.',
+    modal_view: 'Voir détails', modal_similar: 'Projet similaire →', modal_close: 'Fermer',
+    footer_copy: '© 2025 EL FORSA 3D Design & Engineering — Youness EL FORSA. Tous droits réservés.', footer_tag: 'Shaping Ideas Into Reality'
   },
   en: {
     nav1: 'About', nav2: 'Services', nav3: 'Portfolio', nav4: 'Skills', nav5: 'Contact',
     heroBadge: 'Industrial Engineering & 3D Design',
     heroTitle1: 'Turning', heroTitle2: 'ideas into', heroTitle3: 'Industrial', heroTitle4: 'Solutions',
     heroSub: '3D design, industrialization, prototyping and technical engineering services for innovative companies.',
-    btn1: 'View Services', btn2: 'Contact Us', cta: 'Free Quote'
+    btn1: 'View Services', btn2: 'Contact Us', cta: 'Free Quote',
+    // sections
+    about_label: 'About', about_title: 'Youness<br><span>EL FORSA</span>', about_desc: 'Industrial engineer specialized in product design, industrialization and continuous improvement.',
+    services_label: 'Services', services_title: 'Our<br><span>Expertise</span>', services_desc: 'End-to-end engineering solutions from concept to mass production.',
+    process_label: 'Process', process_title: 'Our <span>Workflow</span>', process_desc: 'A proven 8-step process to turn your idea into an operational industrial solution.',
+    portfolio_label: 'Portfolio', portfolio_title: 'Completed<br><span>Projects</span>', portfolio_desc: 'A selection of projects showcasing our industrial engineering and 3D design expertise.',
+    skills_label: 'Skills', skills_title: 'Tools &amp;<br><span>Expertise</span>', skills_desc: 'Proficiency with leading industrial software and engineering methodologies.',
+    why_label: 'Why Choose Us', why_title: 'The EL FORSA<br><span>Advantage</span>', why_desc: 'Technical approach, cost optimization and complete industrial documentation.',
+    testimonials_label: 'Testimonials', testimonials_title: 'What our<br><span>clients say</span>',
+    contact_label: 'Contact', contact_title: "Let's<br><span>start your project</span>", contact_desc: 'Describe your project and we will contact you within 24h.',
+    // form
+    form_labels: ['Full name *','Company','Email *','Project type','Project description *'],
+    placeholders: ['Your name','Your company','your@email.com','Select...','Describe your project, needs and constraints...'],
+    project_types: ['Select...','3D Design','Industrialization','Prototyping','Technical Documentation','Engineering Consulting','Continuous Improvement','Other'],
+    submitBtn: 'Send my request', formSuccess: '✓ Thanks! Your message has been sent. We will reply within 24h.', formError: 'Sending error, please try again later.',
+    modal_view: 'View details', modal_similar: 'Similar project →', modal_close: 'Close',
+    footer_copy: '© 2025 EL FORSA 3D Design & Engineering — Youness EL FORSA. All rights reserved.', footer_tag: 'Shaping Ideas Into Reality'
   }
 };
 
-function toggleLang() {
-  isEn = !isEn;
-  const t = isEn ? translations.en : translations.fr;
+function applyTranslations(lang) {
+  const t = translations[lang];
+  // nav
   const links = document.querySelectorAll('.nav-links a');
   if (links[0]) links[0].textContent = t.nav1;
   if (links[1]) links[1].textContent = t.nav2;
   if (links[2]) links[2].textContent = t.nav3;
   if (links[3]) links[3].textContent = t.nav4;
   if (links[4]) links[4].textContent = t.nav5;
-  document.querySelector('.hero-badge span').textContent = t.heroBadge;
+
+  // hero
+  const heroBadge = document.getElementById('heroBadgeText'); if (heroBadge) heroBadge.textContent = t.heroBadge;
+  const heroTitle = document.getElementById('heroTitle');
+  if (heroTitle) heroTitle.innerHTML = `<span class="line-accent">${t.heroTitle1}</span><span>${t.heroTitle2}</span><span class="line-blue">${t.heroTitle3}</span><span class="line-accent">${t.heroTitle4}</span>`;
+  const heroSub = document.getElementById('heroSub'); if (heroSub) heroSub.textContent = t.heroSub;
+  const hb1 = document.querySelector('.hero-buttons .btn-primary'); if (hb1) hb1.textContent = t.btn1;
+  const hb2 = document.querySelector('.hero-buttons .btn-secondary'); if (hb2) hb2.textContent = t.btn2;
+
+  // sections by id
+  ['about','services','process','portfolio','skills','why','testimonials','contact'].forEach(s => {
+    const lbl = document.querySelector(`#${s} .section-label`);
+    if (lbl && t[`${s}_label`]) lbl.textContent = t[`${s}_label`];
+    const title = document.querySelector(`#${s} .section-title`);
+    if (title && t[`${s}_title`]) title.innerHTML = t[`${s}_title`];
+    const desc = document.querySelector(`#${s} .section-desc`);
+    if (desc && t[`${s}_desc`]) desc.textContent = t[`${s}_desc`];
+  });
+
+  // portfolio buttons (update text by replacing trailing text after svg)
+  document.querySelectorAll('.portfolio-view-btn').forEach(btn => {
+    const svg = btn.querySelector('svg');
+    const svgHtml = svg ? svg.outerHTML : '';
+    btn.innerHTML = svgHtml + ' ' + t.modal_view;
+  });
+
+  // modal buttons
+  const modalPrimary = document.querySelector('#modal .btn-primary'); if (modalPrimary) modalPrimary.textContent = t.modal_similar;
+  const modalClose = document.querySelector('#modal .btn-secondary'); if (modalClose) modalClose.textContent = t.modal_close;
+
+  // contact block
+  const contactLabel = document.querySelector('#contact .section-label'); if (contactLabel) contactLabel.textContent = t.contact_label;
+  const contactTitle = document.querySelector('#contact .section-title'); if (contactTitle) contactTitle.innerHTML = t.contact_title;
+  const contactDesc = document.querySelector('#contact .section-desc'); if (contactDesc) contactDesc.textContent = t.contact_desc;
+
+  // form labels and placeholders
+  const formLabels = document.querySelectorAll('#contact .form-label');
+  formLabels.forEach((lbl, i) => { if (t.form_labels && t.form_labels[i]) lbl.textContent = t.form_labels[i]; });
+  const ph = document.getElementById('fname'); if (ph) ph.placeholder = t.placeholders[0];
+  const phc = document.getElementById('fcompany'); if (phc) phc.placeholder = t.placeholders[1];
+  const phe = document.getElementById('femail'); if (phe) phe.placeholder = t.placeholders[2];
+  const pht = document.getElementById('ftype'); if (pht) {
+    pht.innerHTML = '';
+    t.project_types.forEach(opt => { const o = document.createElement('option'); o.textContent = opt; pht.appendChild(o); });
+  }
+  const phm = document.getElementById('fmessage'); if (phm) phm.placeholder = t.placeholders[4];
+
+  // submit button (keep svg)
+  const submitBtn = document.querySelector('#contact form button');
+  if (submitBtn) {
+    const svg = submitBtn.querySelector('svg');
+    const svgHtml = svg ? svg.outerHTML : '';
+    submitBtn.innerHTML = svgHtml + ' ' + t.submitBtn;
+  }
+
+  // success/error messages
+  const fs = document.getElementById('formSuccess'); if (fs) fs.textContent = t.formSuccess;
+  const fe = document.getElementById('formSubmitError'); if (fe) fe.textContent = t.formError;
+
+  // footer
+  const footerCopies = document.querySelectorAll('.footer-copy');
+  if (footerCopies[0]) footerCopies[0].textContent = t.footer_copy;
+  if (footerCopies[1]) footerCopies[1].textContent = t.footer_tag;
+
+  // modal title/desc labels (if present)
+  const modalViewBtns = document.querySelectorAll('.portfolio-view-btn');
+
+  // persist
+  localStorage.setItem('siteLang', lang);
 }
+
+function toggleLang() {
+  isEn = !isEn;
+  const lang = isEn ? 'en' : 'fr';
+  applyTranslations(lang);
+}
+
+// apply saved language on load
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('siteLang');
+  if (saved && (saved === 'en' || saved === 'fr')) {
+    isEn = saved === 'en';
+    applyTranslations(saved);
+  }
+});
 </script>
 </body>
 </html>
