@@ -3,15 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=elforsa-website.html">
+  <meta name="description" content="EL FORSA 3D Design &amp; Engineering - Services d'ingénierie industrielle, conception 3D, industrialisation et prototypage pour des entreprises innovantes.">
   <title>EL FORSA 3D Design &amp; Engineering</title>
-  <script>window.location.replace('elforsa-website.html');</script>
   <style>
     body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0d1b2a;color:#fff;font-family:system-ui,Arial,sans-serif}
     a{color:#3da5ff}
   </style>
+  <script>
+    fetch('elforsa-website.html')
+      .then(function(response) { return response.text(); })
+      .then(function(html) {
+        document.open();
+        document.write(html);
+        document.close();
+      })
+      .catch(function() {
+        document.body.innerHTML = '<p>Unable to load the site. Open <a href="elforsa-website.html">elforsa-website.html</a>.</p>';
+      });
+  </script>
 </head>
 <body>
-  <p>Redirecting to <a href="elforsa-website.html">EL FORSA 3D Design &amp; Engineering</a>...</p>
+  <p>Loading EL FORSA 3D Design &amp; Engineering...</p>
 </body>
 </html>
